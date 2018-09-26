@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="assignment1_stylesheet.css"/>
+
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Photo Gallery</title>
+	</head>
+	
+	<body>
+	
+	<div id="navbar">
+	<ul>
+		<li><a href="to_do.html">Your To-Do List</a></li>
+		<li><a href="photo_gal.html">Photo Gallery</a></li>
+		<li><a href="me_page.html">About the Creator</a></li>
+	</ul>
+	</div>	
+	
+	<h1>Photo Gallery</h1>
+	
+	<div align="center">
+	
+	<div class="photos" align="center">
+	<table align="center" id="gallery">
+		<tr>
+			<td><img class="pic" id="pic0" src="https://www.publicdomainpictures.net/pictures/20000/velka/surfer.jpg" style="height:10%;"></td>
+			<td><img class="pic" id="pic1" src="https://www.publicdomainpictures.net/pictures/240000/velka/scenic-landscape-1508373727uru.jpg" style="height:10%;"></td>
+			<td><img class="pic" id="pic2" src="https://www.publicdomainpictures.net/pictures/220000/velka/winter-scene-1494682117gMU.jpg" style="height:10%;"></td>
+			<td><img class="pic" id="pic3" src="https://www.publicdomainpictures.net/pictures/260000/velka/dove-flying-in-sky-15286971079ws.jpg" style="height:10%;"></td>
+		</tr>
+		<tr>
+			<td><img class="pic" id="pic4" src="https://www.publicdomainpictures.net/pictures/40000/velka/the-railroad-goes-into-the-distance.jpg" style="height:10%;"></td>
+			<td><img class="pic" id="pic5" src="https://www.publicdomainpictures.net/pictures/220000/velka/bison-14916129113HR.jpg" style="height:10%;"></td>
+			<td><img class="pic" id="pic6" src="https://www.publicdomainpictures.net/pictures/50000/velka/tabun-koni.jpg" style="height:10%;"></td>
+			<td><img class="pic" id="pic7" src="https://www.publicdomainpictures.net/pictures/20000/velka/background-with-flower-and-butterfl-1326054113zvO.jpg" style="height:10%;"></td>
+		</tr>
+		<tr>
+			<td><img class="pic" id="pic8" src="https://www.publicdomainpictures.net/pictures/210000/velka/elephant-sunset-silhouette.jpg" style="height:10%;"></td>
+			<td><img class="pic" id="pic9" src="https://www.publicdomainpictures.net/pictures/230000/velka/firefighting-1502892514AQ0.jpg" style="height:10%;"></td>
+			<td><img class="pic" id="pic10" src="https://www.publicdomainpictures.net/pictures/10000/velka/1160-1239959315PjNp.jpg" style="height:10%;"></td>
+			<td><img class="pic" id="pic11" src="https://www.publicdomainpictures.net/pictures/210000/velka/statue-of-liberty-1484578781bFp.jpg" style="height:10%;"></td>
+		</tr>
+		<tr>
+			<td><img class="pic" id="pic12" src="https://www.publicdomainpictures.net/pictures/30000/velka/llama-watch.jpg" style="height:10%;"></td>
+			<td><img class="pic" id="pic13" src="https://www.publicdomainpictures.net/pictures/150000/velka/purple-rock-formations.jpg" style="height:10%;"></td>
+			<td><img class="pic" id="pic14" src="https://www.publicdomainpictures.net/pictures/10000/velka/barelsud-46251285670607aPGG.jpg" style="height:10%;"></td>
+			<td><img class="pic" id="pic15" src="https://www.publicdomainpictures.net/pictures/230000/velka/tropical-sunset.jpg" style="height:10%;"></td>
+		</tr>
+		<tr>
+			<td><img class="pic" id="pic16" src="https://www.publicdomainpictures.net/pictures/230000/velka/leopard-1501079119zNC.jpg" style="height:10%;"></td>
+			<td><img class="pic" id="pic17" src="https://www.publicdomainpictures.net/pictures/20000/velka/sunset-in-winter.jpg" style="height:10%;"></td>
+			<td><img class="pic" id="pic18" src="https://www.publicdomainpictures.net/pictures/30000/velka/yellow-autumn.jpg" style="height:10%;"></td>
+			<td><img class="pic" id="pic19" src="https://www.publicdomainpictures.net/pictures/40000/velka/gorilla-1366883369BXE.jpg" style="height:10%;"></td>
+		</tr>
+	</table>
+	</div>
+	</div>
+	
+	<div id="buttons">
+		<button id="closer">Click here to close current</button>
+		<button id="left"><b><</b></button>
+		<button id="right"><b>></b></button>
+	</div>
+	
+	<div id="large">
+		<img class="large_pic" id="pic0_" src="https://www.publicdomainpictures.net/pictures/20000/velka/surfer.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic1_" src="https://www.publicdomainpictures.net/pictures/240000/velka/scenic-landscape-1508373727uru.jpg" style="width:90%;display: none;">
+		<img class="large_pic" id="pic2_" src="https://www.publicdomainpictures.net/pictures/220000/velka/winter-scene-1494682117gMU.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic3_" src="https://www.publicdomainpictures.net/pictures/260000/velka/dove-flying-in-sky-15286971079ws.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic4_" src="https://www.publicdomainpictures.net/pictures/40000/velka/the-railroad-goes-into-the-distance.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic5_" src="https://www.publicdomainpictures.net/pictures/220000/velka/bison-14916129113HR.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic6_" src="https://www.publicdomainpictures.net/pictures/50000/velka/tabun-koni.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic7_" src="https://www.publicdomainpictures.net/pictures/20000/velka/background-with-flower-and-butterfl-1326054113zvO.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic8_" src="https://www.publicdomainpictures.net/pictures/210000/velka/elephant-sunset-silhouette.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic9_" src="https://www.publicdomainpictures.net/pictures/230000/velka/firefighting-1502892514AQ0.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic10_" src="https://www.publicdomainpictures.net/pictures/10000/velka/1160-1239959315PjNp.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic11_" src="https://www.publicdomainpictures.net/pictures/210000/velka/statue-of-liberty-1484578781bFp.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic12_" src="https://www.publicdomainpictures.net/pictures/30000/velka/llama-watch.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic13_" src="https://www.publicdomainpictures.net/pictures/150000/velka/purple-rock-formations.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic14_" src="https://www.publicdomainpictures.net/pictures/10000/velka/barelsud-46251285670607aPGG.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic15_" src="https://www.publicdomainpictures.net/pictures/230000/velka/tropical-sunset.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic16_" src="https://www.publicdomainpictures.net/pictures/230000/velka/leopard-1501079119zNC.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic17_" src="https://www.publicdomainpictures.net/pictures/20000/velka/sunset-in-winter.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic18_" src="https://www.publicdomainpictures.net/pictures/30000/velka/yellow-autumn.jpg" style="width:70%;display: none;">
+		<img class="large_pic" id="pic19_" src="https://www.publicdomainpictures.net/pictures/40000/velka/gorilla-1366883369BXE.jpg" style="width:70%;display: none;">
+	</div>
+	
+	<script>
+	
+		document.getElementById("pic0").addEventListener("click", visibility0);
+		document.getElementById("pic1").addEventListener("click", visibility1);
+		document.getElementById("pic2").addEventListener("click", visibility2);
+		document.getElementById("pic3").addEventListener("click", visibility3);
+		document.getElementById("pic4").addEventListener("click", visibility4);
+		document.getElementById("pic5").addEventListener("click", visibility5);
+		document.getElementById("pic6").addEventListener("click", visibility6);
+		document.getElementById("pic7").addEventListener("click", visibility7);
+		document.getElementById("pic8").addEventListener("click", visibility8);
+		document.getElementById("pic9").addEventListener("click", visibility9);
+		document.getElementById("pic10").addEventListener("click", visibility10);
+		document.getElementById("pic11").addEventListener("click", visibility11);
+		document.getElementById("pic12").addEventListener("click", visibility12);
+		document.getElementById("pic13").addEventListener("click", visibility13);
+		document.getElementById("pic14").addEventListener("click", visibility14);
+		document.getElementById("pic15").addEventListener("click", visibility15);
+		document.getElementById("pic16").addEventListener("click", visibility16);
+		document.getElementById("pic17").addEventListener("click", visibility17);
+		document.getElementById("pic18").addEventListener("click", visibility18);
+		document.getElementById("pic19").addEventListener("click", visibility19);
+		document.getElementById("closer").addEventListener("click", close);
+		document.getElementById("left").addEventListener("click", left_pic);
+		document.getElementById("right").addEventListener("click", right_pic);
+		
+		var current_image;
+		
+		document.addEventListener("keydown", function(event) {
+			const key = event.key;
+			if(key == "Escape") {
+				close();
+			} else if(key == "ArrowRight") {
+				right_pic();
+			} else if(key == "ArrowLeft") {
+				left_pic();
+			}
+		});
+		
+		function visibility0() {
+			closeAll();
+			var x = document.getElementById("pic0_");
+			if(x.style.display === "none") { 
+				current_image = 0;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility1() {
+			closeAll();
+			var x = document.getElementById("pic1_");
+			if(x.style.display === "none") { 
+				current_image = 1;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility2() {
+			closeAll();
+			var x = document.getElementById("pic2_");
+			if(x.style.display === "none") { 
+				current_image = 2;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility3() {
+			closeAll();
+			var x = document.getElementById("pic3_");
+			if(x.style.display === "none") { 
+				current_image = 3;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility4() {
+			closeAll();
+			var x = document.getElementById("pic4_");
+			if(x.style.display === "none") { 
+				current_image = 4;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility5() {
+			closeAll();
+			var x = document.getElementById("pic5_");
+			if(x.style.display === "none") { 
+				current_image = 5;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility6() {
+			closeAll();
+			var x = document.getElementById("pic6_");
+			if(x.style.display === "none") { 
+				current_image = 6;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility7() {
+			closeAll();
+			var x = document.getElementById("pic7_");
+			if(x.style.display === "none") { 
+				current_image = 7;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility8() {
+			closeAll();
+			var x = document.getElementById("pic8_");
+			if(x.style.display === "none") { 
+				current_image = 8;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility9() {
+			closeAll();
+			var x = document.getElementById("pic9_");
+			if(x.style.display === "none") { 
+				current_image = 9;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility10() {
+			closeAll();
+			var x = document.getElementById("pic10_");
+			if(x.style.display === "none") { 
+				current_image = 10;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility11() {
+			closeAll();
+			var x = document.getElementById("pic11_");
+			if(x.style.display === "none") { 
+				current_image = 11;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility12() {
+			closeAll();
+			var x = document.getElementById("pic12_");
+			if(x.style.display === "none") { 
+				current_image = 12;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility13() {
+			closeAll();
+			var x = document.getElementById("pic13_");
+			if(x.style.display === "none") { 
+				current_image = 13;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility14() {
+			closeAll();
+			var x = document.getElementById("pic14_");
+			if(x.style.display === "none") { 
+				current_image = 14;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility15() {
+			closeAll();
+			var x = document.getElementById("pic15_");
+			if(x.style.display === "none") { 
+				current_image = 15;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility16() {
+			closeAll();
+			var x = document.getElementById("pic16_");
+			if(x.style.display === "none") { 
+				current_image = 16;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility17() {
+			closeAll();
+			var x = document.getElementById("pic17_");
+			if(x.style.display === "none") { 
+				current_image = 17;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility18() {
+			closeAll();
+			var x = document.getElementById("pic18_");
+			if(x.style.display === "none") { 
+				current_image = 18;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function visibility19() {
+			closeAll();
+			var x = document.getElementById("pic19_");
+			if(x.style.display === "none") { 
+				current_image = 19;
+				x.style.display = "block";
+				document.getElementById("gallery").style.display = "none";
+				document.body.style.backgroundColor = "black";
+			}
+		}
+		
+		function closeAll() {
+			for(var i = 0; i < 20; i++) {
+				document.getElementById("pic"+i+"_").style.display = "none";
+				
+			}
+		}
+		
+		function close() {
+			closeAll();
+			document.getElementById("gallery").style.display = "inline-block";
+			
+			document.body.style.backgroundColor = "#b5b5b5";
+		}
+		
+		function right_pic() {
+			closeAll();
+			if(current_image == 19) {
+				current_image = -1;
+			}
+			current_image = current_image+1;
+			document.getElementById("pic"+current_image+"_").style.display = "block";
+		}
+		
+		function left_pic() {
+			closeAll();
+			if(current_image == 0) {
+				current_image = 20;
+			}
+
+			current_image = current_image-1;
+			document.getElementById("pic"+current_image+"_").style.display = "block";
+			
+			
+		}
+		
+	</script>
+	
+	
+	</body>
+
+</html>

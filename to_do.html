@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="assignment1_stylesheet.css"/>
+
+
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Your To-Do List</title>
+	</head>
+	
+	<body>
+	
+	<div id="navbar">
+	<ul>
+		<li><a href="to_do.html">Your To-Do List</a></li>
+		<li><a href="photo_gal.html">Photo Gallery</a></li>
+		<li><a href="me_page.html">About the Creator</a></li>
+	</ul>
+	</div>
+	
+	<h1>Your To-Do List</h1>
+
+	<div class="outer" align="center">
+	<div class="add_event">
+	
+		<input type="text" id="new_desc" value="New Task">
+		
+		<input type="datetime-local" id="new_deadline">
+		
+		<select id="category">
+			<option value="na">Choose a Category</option>
+			<option value="Homework">Homework</option>
+			<option value="Chores">Chores</option>
+			<option value="Errands">Errands</option>
+			<option value="Meetings">Meetings</option>
+		</select>
+		<button id="addbutton">Add Item</button>
+	</div>
+	
+	<div class="add_event">
+		<input type="text" id="new_cat" value="">
+		<button id="addcat">Add Category</button>
+	</div>
+	
+	
+	<p></p>
+	
+	<table id="todo" align="center">
+		<tr>
+			<th><b>Time Created</b></th>
+			<th><b>Task Description</b></th>
+			<th><b>Deadline</b></th>
+			<th><b>Category</b></th>
+			<th><b>Completetion</b></th>
+		</tr>
+	</table>
+	
+	
+	</div>
+	<p align="center">Sort By:
+		<select id="sort_method">
+			<option value="0">Date/time added</option>
+			<option value="1">Date/time of deadline</option>
+			<option value="2">Category</option>
+			<option value="3">Incomplete vs. Complete</option>
+		</select>
+		<button id="sort">Sort</button>
+	</p>
+		
+	<script>
+	
+	document.getElementById("addbutton").addEventListener("click", addToDo);
+	document.getElementById("sort").addEventListener("click", sortBy);
+	document.getElementById("addcat").addEventListener("click", add_category);
+	
+	var cat_options = new Array();
+	
+	
+	function add_category() {
+		var categories = document.getElementById("category");
+		var option = document.createElement("option");
+		option.text = document.getElementById("new_cat").value;
+		categories.add(option);
+	}
+	
+	
+	
+	function get_cats() {
+		var absent;
+		var i;
+		var j;
+		var table = document.getElementById("todo");
+		var rows = table.rows;
+		
+		for(i = 1; i < rows.length; i++) {
+			absent = true;
+			for(j = 0; j < cat_options.length; j++) {
+				if(cat_options[j] == rows[i].getElementsByTagName("td")[3].innerHTML) {
+					absent = false;
+					break;
+				}
+			}
+			if(absent) {
+				cat_options.push(rows[i].getElementsByTagName("td")[3].innerHTML);
+			}	
+		}
+	}
+	
+	function cat_sort(str) {
+		var num;
+		for(var i = 0; i < cat_options.length; i++) {
+			if(str == cat_options[i]) {
+				num = i;
+				break;
+			}
+		}
+		return num;
+	}
+	
+	function comp_sort(str) {
+		var num;
+		if(str) {
+			return 1;
+		}
+		return 2;
+	}
+	
+	function sortBy() {
+		var table = document.getElementById("todo");
+		var rows = table.rows;
+		
+		
+		
+		if(document.getElementById("sort_method").value == "0") {
+			var i;
+			var sorting = true;
+			var swap = false;
+			while(sorting) {
+				sorting = false;
+				for(i = 1; i < rows.length - 1; i++) {
+					if(rows[i].cells[0].innerHTML > rows[i+1].cells[0].innerHTML){
+						swap = true;
+						break;
+					}
+				}
+				if(swap){
+					rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+					sorting = true;
+				}
+			}
+		}
+		
+		if(document.getElementById("sort_method").value == "1") {
+			var i;
+			var sorting = true;
+			var swap = false;
+			while(sorting) {
+				sorting = false;
+				for(i = 1; i < rows.length - 1; i++) {
+					if(rows[i].cells[2].innerHTML > rows[i+1].cells[2].innerHTML){
+						swap = true;
+						break;
+					}
+				}
+				if(swap){
+					rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+					sorting = true;
+				}
+			}
+		}
+	
+		if(document.getElementById("sort_method").value == "2") {
+			var i;
+			var sorting = true;
+			var swap = false;
+			get_cats();
+			
+			while(sorting) {
+				sorting = false;
+				for(i = 1; i < rows.length - 1; i++) {
+					if(cat_sort(rows[i].cells[3].innerHTML) > cat_sort(rows[i+1].cells[3].innerHTML)){
+						swap = true;
+						break;
+					}
+				}
+				if(swap){
+					rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+					sorting = true;
+				}
+			}
+			
+			
+		}
+		
+		if(document.getElementById("sort_method").value == "3") {
+		
+			var i;
+			var sorting = true;
+			var swap = false;
+			while(sorting) {
+				sorting = false;
+				for(i = 1; i < rows.length - 1; i++) {
+					if(comp_sort(rows[i].cells[4].children[0].checked) > comp_sort(rows[i+1].cells[4].children[0].checked)){
+						swap = true;
+						break;
+					}
+				}
+				if(swap){
+					rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+					sorting = true;
+				}
+			}
+		}
+	
+	}
+	
+	
+	
+	function addToDo(){
+	
+		if (document.getElementById("category").value == "na")
+		{
+			alert("Please select a catergory.");
+			return;
+		}
+		if (document.getElementById("new_deadline").value == "")
+		{
+			alert("Please select a deadline.");
+			return;
+		}
+	
+		var table = document.getElementById("todo");
+		var row = table.insertRow(1);
+		var time_created = row.insertCell(0);
+		var description = row.insertCell(1);
+		var deadline = row.insertCell(2);
+		var category = row.insertCell(3);
+		var completion = row.insertCell(4);
+		
+		var txt_time_created = document.createTextNode(Date());
+		var txt_description = document.createTextNode(document.getElementById("new_desc").value);
+		var txt_deadline = document.createTextNode(document.getElementById("new_deadline").value);
+		var txt_category = document.createTextNode(document.getElementById("category").value);
+		var chk_completion = document.createElement("INPUT"); 
+		chk_completion.setAttribute("type", "checkbox");
+		chk_completion.setAttribute("id", "check");
+		
+		time_created.appendChild(txt_time_created);
+		description.appendChild(txt_description);
+		deadline.appendChild(txt_deadline);
+		category.appendChild(txt_category);
+		completion.appendChild(chk_completion);
+		
+	}
+
+		
+	</script>
+	
+	
+	</body>
+
+</html>
