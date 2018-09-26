@@ -54,6 +54,7 @@
 			<th><b>Deadline</b></th>
 			<th><b>Category</b></th>
 			<th><b>Completetion</b></th>
+			<th><b>Row ID</b></th>
 		</tr>
 	</table>
 	
@@ -68,16 +69,23 @@
 		</select>
 		<button id="sort">Sort</button>
 	</p>
+	
+	<p align="center">Delete by ID:
+		<input type="text" id="to_del">
+		<button id="delete">Delete</button>
+	</p>
 		
 	<script>
 	
 	document.getElementById("addbutton").addEventListener("click", addToDo);
 	document.getElementById("sort").addEventListener("click", sortBy);
 	document.getElementById("addcat").addEventListener("click", add_category);
+	document.getElementById("delete").addEventListener("click", delete_row);
 	
 	var cat_options = new Array();
 	var cat_for_color = ["Homework", "Chores", "Errands", "Meetings"];
 	var cat_color = ["#8eb9ff", "#d89eff", "#f0ff9e", "#99ffca"];
+	var row_IDs = 1;
 	
 	function add_category() {
 		var categories = document.getElementById("category");
@@ -227,8 +235,27 @@
 	
 	}
 	
-	function delete_row() {
+	function find_row_byID(id) {
+		var table = document.getElementById("todo");
+		var rows = table.rows;
+		var i;
+		for(i = 0; i < rows.length; i++) {
+			if(id == rows[i].cells[5].innerHTML) {
+				return i;
+			}
+		}	
+		return null;
+	}
 	
+	
+	function delete_row() {
+		var row = document.getElementById("to_del").value;
+		
+		if(find_row_byID(row) != 0 && find_row_byID(row) != null) {
+			if(confirm("Are you sure you wish to delete the task?")) {
+				document.getElementById("todo").deleteRow(find_row_byID(row));
+			}
+		}
 	}
 	
 	
@@ -252,6 +279,7 @@
 		var deadline = row.insertCell(2);
 		var category = row.insertCell(3);
 		var completion = row.insertCell(4);
+		var row_ID = row.insertCell(5);
 		
 		var txt_time_created = document.createTextNode(Date());
 		var txt_description = document.createTextNode(document.getElementById("new_desc").value);
@@ -260,16 +288,18 @@
 		var chk_completion = document.createElement("INPUT"); 
 		chk_completion.setAttribute("type", "checkbox");
 		chk_completion.setAttribute("id", "check");
+		var txt_rowID = document.createTextNode(row_IDs);
 		
 		time_created.appendChild(txt_time_created);
 		description.appendChild(txt_description);
 		deadline.appendChild(txt_deadline);
 		category.appendChild(txt_category);
 		completion.appendChild(chk_completion);
+		row_ID.appendChild(txt_rowID);
+		row_IDs = row_IDs + 1;
 		
 		table.rows[1].style.backgroundColor = cat_color[get_color(document.getElementById("category").value)];
 	}
-
 		
 	</script>
 	
