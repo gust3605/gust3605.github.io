@@ -40,6 +40,7 @@
 	
 	<div class="add_event">
 		<input type="text" id="new_cat" value="">
+		<input type="color" id="new_cat_color">
 		<button id="addcat">Add Category</button>
 	</div>
 	
@@ -75,16 +76,27 @@
 	document.getElementById("addcat").addEventListener("click", add_category);
 	
 	var cat_options = new Array();
-	
+	var cat_for_color = ["Homework", "Chores", "Errands", "Meetings"];
+	var cat_color = ["#8eb9ff", "#d89eff", "#f0ff9e", "#99ffca"];
 	
 	function add_category() {
 		var categories = document.getElementById("category");
 		var option = document.createElement("option");
 		option.text = document.getElementById("new_cat").value;
 		categories.add(option);
+		
+		cat_for_color.push(document.getElementById("new_cat").value);
+		cat_color.push(document.getElementById("new_cat_color").value);
 	}
 	
-	
+	function get_color(cat) {
+		var i;
+		for(i = 0; i < cat_for_color.length; i++) {
+			if(cat == cat_for_color[i]) {
+				return i;
+			}
+		}
+	}
 	
 	function get_cats() {
 		var absent;
@@ -215,6 +227,9 @@
 	
 	}
 	
+	function delete_row() {
+	
+	}
 	
 	
 	function addToDo(){
@@ -252,6 +267,9 @@
 		category.appendChild(txt_category);
 		completion.appendChild(chk_completion);
 		
+		
+		alert(cat_color[get_color(document.getElementById("category").value)]);
+		table.rows[1].style.backgroundColor = cat_color[get_color(document.getElementById("category").value)];
 	}
 
 		
